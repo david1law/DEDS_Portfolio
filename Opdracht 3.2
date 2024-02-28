@@ -1,0 +1,44 @@
+
+#bubblesort
+def bubble_sort(array):
+    n = len(array)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if array[j] > array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
+    return array
+
+
+random_list = [64, 34, 25, 12, 22, 11, 90]
+sorted_list = bubble_sort(random_list)
+print(sorted_list)
+
+#meest voorkomende elementen
+def meest_voorkomende_elementen(array):
+    hoeveelheid = {}
+
+    for element in array:
+        if element in hoeveelheid:
+            hoeveelheid[element] += 1
+        else:
+            hoeveelheid[element] = 1
+
+    max_hoeveelheid = max(hoeveelheid.values())
+    meest_voorkomend_elementen = [element for element, hoeveelheid in hoeveelheid.items() if hoeveelheid == max_hoeveelheid]
+
+    return meest_voorkomend_elementen
+
+array = [1, 2, 3, 2, 4, 5, 2, 2]
+meest_voorkomend_elementen = meest_voorkomende_elementen(array)
+print(meest_voorkomend_elementen)
+
+#Verwijder unieke elementen
+def verwijder_dubbele_elementen(array):
+    unieke_elementen = set(array)
+    return list(unieke_elementen)
+
+array = [1, 2, 3, 2, 4, 5, 2, 2]
+unieke_elementen = verwijder_dubbele_elementen(array)
+print(unieke_elementen)
+
+
