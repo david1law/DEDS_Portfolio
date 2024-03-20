@@ -1,5 +1,7 @@
+import processing
+
 def main():
-    print("Hello, World!")
+    processing.process()
 
 if __name__ == "__main__":
     main()
